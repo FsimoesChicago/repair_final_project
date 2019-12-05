@@ -63,7 +63,7 @@
     </label>
 
     <!-- Input for service_provider_id start -->
-    <input type="text" id="service_provider_id" name="service_provider_id" class="form-control" value="<%= @repair.service_provider_id %>">
+    <%= select_tag(:service_provider_id, options_from_collection_for_select(ServiceProvider.all, :id, :created_at, @repair.service_provider_id), :class => "form-control") %>
     <!-- Input for service_provider_id end -->
   </div>
   <!-- Label and input for service_provider_id end -->
