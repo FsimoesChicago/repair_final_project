@@ -61,6 +61,22 @@ class RepairsController < ApplicationController
     end
   end
 
+  def destroy_row_from_client
+    @repair = Repair.find(params.fetch("id_to_remove"))
+
+    @repair.destroy
+
+    redirect_to("/clients/#{@repair.client_id}", notice: "Repair deleted successfully.")
+  end
+
+  def destroy_row_from_service_provider
+    @repair = Repair.find(params.fetch("id_to_remove"))
+
+    @repair.destroy
+
+    redirect_to("/service_providers/#{@repair.service_provider_id}", notice: "Repair deleted successfully.")
+  end
+
   def destroy_row
     @repair = Repair.find(params.fetch("id_to_remove"))
 

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_repair/:id_to_remove", { :controller => "repairs", :action => "destroy_row" })
+  get("/delete_repair_from_service_provider/:id_to_remove", { :controller => "repairs", :action => "destroy_row_from_service_provider" })
+  get("/delete_repair_from_client/:id_to_remove", { :controller => "repairs", :action => "destroy_row_from_client" })
 
   #------------------------------
 
