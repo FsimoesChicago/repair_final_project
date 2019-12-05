@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.all
+    @clients = Client.page(params[:page]).per(10)
 
     render("client_templates/index.html.erb")
   end

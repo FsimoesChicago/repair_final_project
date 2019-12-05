@@ -10,7 +10,7 @@ class RepairsController < ApplicationController
   end
 
   def index
-    @repairs = Repair.all
+    @repairs = Repair.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@repairs.where.not(:location_latitude => nil)) do |repair, marker|
       marker.lat repair.location_latitude
       marker.lng repair.location_longitude
