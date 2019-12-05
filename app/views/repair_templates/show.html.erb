@@ -67,7 +67,11 @@
       </dt>
       <!-- Display client_id start -->
       <dd>
-        <%= @repair.client_id %>
+        <% if @repair.client.present? %>
+          <a href="/clients/<%= @repair.client_id %>">
+            <%= @repair.client.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display client_id end -->
 
@@ -76,7 +80,11 @@
       </dt>
       <!-- Display service_provider_id start -->
       <dd>
-        <%= @repair.service_provider_id %>
+        <% if @repair.service_provider.present? %>
+          <a href="/service_providers/<%= @repair.service_provider_id %>">
+            <%= @repair.service_provider.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display service_provider_id end -->
 

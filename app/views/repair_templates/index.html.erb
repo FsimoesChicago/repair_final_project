@@ -96,13 +96,21 @@
 
         <!-- Display repair.client_id start -->
         <td>
-          <%= repair.client.created_at %>
+          <% if repair.client.present? %>
+            <a href="/clients/<%= repair.client.id %>">
+              <%= repair.client.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display repair.client_id end -->
 
         <!-- Display repair.service_provider_id start -->
         <td>
-          <%= repair.service_provider.created_at %>
+          <% if repair.service_provider.present? %>
+            <a href="/service_providers/<%= repair.service_provider.id %>">
+              <%= repair.service_provider.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display repair.service_provider_id end -->
 
