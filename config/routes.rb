@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Repair resource:
+
+  # CREATE
+  get("/repairs/new", { :controller => "repairs", :action => "new_form" })
+  post("/create_repair", { :controller => "repairs", :action => "create_row" })
+
+  # READ
+  get("/repairs", { :controller => "repairs", :action => "index" })
+  get("/repairs/:id_to_display", { :controller => "repairs", :action => "show" })
+
+  # UPDATE
+  get("/repairs/:prefill_with_id/edit", { :controller => "repairs", :action => "edit_form" })
+  post("/update_repair/:id_to_modify", { :controller => "repairs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_repair/:id_to_remove", { :controller => "repairs", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :service_providers
   # Routes for the Service provider resource:
 

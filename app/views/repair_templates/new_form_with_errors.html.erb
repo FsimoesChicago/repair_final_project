@@ -1,0 +1,104 @@
+<!-- Validation failure messages -->
+<% if @repair.present? %>
+  <% if @repair.errors.any? %>
+    <% @repair.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new repair
+</h1>
+
+
+<hr>
+
+<!-- Form repair start -->
+<form action="/create_repair" method="post">
+<!-- Form repair end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <!-- Input for location start -->
+    <input type="text" id="location" name="location" class="form-control" value="<%= @repair.location %>">
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <!-- Label and input for repair_type start -->
+  <div class="form-group">
+    <label for="repair_type">
+      Repair type
+    </label>
+
+    <!-- Input for repair_type start -->
+    <input type="text" id="repair_type" name="repair_type" class="form-control" value="<%= @repair.repair_type %>">
+    <!-- Input for repair_type end -->
+  </div>
+  <!-- Label and input for repair_type end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @repair.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for client_id start -->
+  <div class="form-group">
+    <label for="client_id">
+      Client
+    </label>
+
+    <!-- Input for client_id start -->
+    <input type="text" id="client_id" name="client_id" class="form-control" value="<%= @repair.client_id %>">
+    <!-- Input for client_id end -->
+  </div>
+  <!-- Label and input for client_id end -->
+
+  <!-- Label and input for service_provider_id start -->
+  <div class="form-group">
+    <label for="service_provider_id">
+      Service provider
+    </label>
+
+    <!-- Input for service_provider_id start -->
+    <input type="text" id="service_provider_id" name="service_provider_id" class="form-control" value="<%= @repair.service_provider_id %>">
+    <!-- Input for service_provider_id end -->
+  </div>
+  <!-- Label and input for service_provider_id end -->
+
+  <!-- Label and input for car_type start -->
+  <div class="form-group">
+    <label for="car_type">
+      Car type
+    </label>
+
+    <!-- Input for car_type start -->
+    <input type="text" id="car_type" name="car_type" class="form-control" value="<%= @repair.car_type %>">
+    <!-- Input for car_type end -->
+  </div>
+  <!-- Label and input for car_type end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create repair
+  </button>
+</form>
+
+<hr>
+
+<a href="/repairs">
+  Go back
+</a>

@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Repair #<%= @repair.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/repairs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link repair start -->
+      <div class="col">
+        <a href="/repairs/<%= @repair.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit repair
+        </a>
+      </div>
+      <!-- Edit link repair end -->
+
+      <!-- Delete link repair start -->
+      <div class="col">
+        <a href="/delete_repair/<%= @repair.id %>" class="btn btn-block btn-outline-secondary">
+          Delete repair
+        </a>
+      </div>
+      <!-- Delete link repair end -->
+    </div>
+
+    <dl>
+      <dt>
+        Location
+      </dt>
+      <!-- Display location start -->
+      <dd>
+        <%= @repair.location %>
+      </dd>
+      <!-- Display location end -->
+
+      <dt>
+        Repair type
+      </dt>
+      <!-- Display repair_type start -->
+      <dd>
+        <%= @repair.repair_type %>
+      </dd>
+      <!-- Display repair_type end -->
+
+      <dt>
+        Price
+      </dt>
+      <!-- Display price start -->
+      <dd>
+        <%= @repair.price %>
+      </dd>
+      <!-- Display price end -->
+
+      <dt>
+        Client
+      </dt>
+      <!-- Display client_id start -->
+      <dd>
+        <%= @repair.client_id %>
+      </dd>
+      <!-- Display client_id end -->
+
+      <dt>
+        Service provider
+      </dt>
+      <!-- Display service_provider_id start -->
+      <dd>
+        <%= @repair.service_provider_id %>
+      </dd>
+      <!-- Display service_provider_id end -->
+
+      <dt>
+        Car type
+      </dt>
+      <!-- Display car_type start -->
+      <dd>
+        <%= @repair.car_type %>
+      </dd>
+      <!-- Display car_type end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@repair.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@repair.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
