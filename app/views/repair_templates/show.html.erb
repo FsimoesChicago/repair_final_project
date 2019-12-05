@@ -13,17 +13,21 @@
 
       <!-- Edit link repair start -->
       <div class="col">
-        <a href="/repairs/<%= @repair.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit repair
-        </a>
+        <% if current_client == @repair.client %>
+          <a href="/repairs/<%= @repair.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit repair
+          </a>
+        <% end %>
       </div>
       <!-- Edit link repair end -->
 
       <!-- Delete link repair start -->
       <div class="col">
-        <a href="/delete_repair/<%= @repair.id %>" class="btn btn-block btn-outline-secondary">
-          Delete repair
-        </a>
+        <% if current_client == @repair.client %>
+          <a href="/delete_repair/<%= @repair.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete repair
+          </a>
+        <% end %>
       </div>
       <!-- Delete link repair end -->
     </div>
