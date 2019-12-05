@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @service_provider.services.each do |repair| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/repairs/<%= repair.id %>">
           <%= repair.created_at %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "repair_templates/repairs_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "repair_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -74,31 +70,22 @@
 
       <% @repairs.each do |repair| %>
       <tr>
-        <!-- Display repair.id start -->
         <td>
           <%= repair.id %>
         </td>
-        <!-- Display repair.id end -->
 
-        <!-- Display repair.location start -->
         <td>
           <%= repair.location %>
         </td>
-        <!-- Display repair.location end -->
 
-        <!-- Display repair.repair_type start -->
         <td>
           <%= repair.repair_type %>
         </td>
-        <!-- Display repair.repair_type end -->
 
-        <!-- Display repair.price start -->
         <td>
           <%= repair.price %>
         </td>
-        <!-- Display repair.price end -->
 
-        <!-- Display repair.client_id start -->
         <td>
           <% if repair.client.present? %>
             <a href="/clients/<%= repair.client.id %>">
@@ -106,9 +93,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display repair.client_id end -->
 
-        <!-- Display repair.service_provider_id start -->
         <td>
           <% if repair.service_provider.present? %>
             <a href="/service_providers/<%= repair.service_provider.id %>">
@@ -116,25 +101,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display repair.service_provider_id end -->
 
-        <!-- Display repair.car_type start -->
         <td>
           <%= repair.car_type %>
         </td>
-        <!-- Display repair.car_type end -->
 
-        <!-- Display repair.created_at start -->
         <td>
           <%= time_ago_in_words(repair.created_at) %> ago
         </td>
-        <!-- Display repair.created_at end -->
 
-        <!-- Display repair.updated_at start -->
         <td>
           <%= time_ago_in_words(repair.updated_at) %> ago
         </td>
-        <!-- Display repair.updated_at end -->
 
         <td>
           <a href="/repairs/<%= repair.id %>">

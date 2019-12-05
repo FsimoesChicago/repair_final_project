@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link client start -->
       <div class="col">
         <a href="/clients/<%= @client.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit client
         </a>
       </div>
-      <!-- Edit link client end -->
 
     </div>
 
@@ -25,46 +23,36 @@
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @client.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @client.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@client.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@client.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "client_templates/client_services" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

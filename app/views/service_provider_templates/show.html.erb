@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link service_provider start -->
       <div class="col">
         <a href="/service_providers/<%= @service_provider.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit service provider
         </a>
       </div>
-      <!-- Edit link service_provider end -->
 
     </div>
 
@@ -25,46 +23,36 @@
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @service_provider.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @service_provider.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@service_provider.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@service_provider.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "service_provider_templates/service_provider_services" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

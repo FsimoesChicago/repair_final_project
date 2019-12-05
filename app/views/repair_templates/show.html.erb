@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link repair start -->
       <div class="col">
         <% if current_client == @repair.client %>
           <a href="/repairs/<%= @repair.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link repair end -->
 
-      <!-- Delete link repair start -->
       <div class="col">
         <% if current_client == @repair.client %>
           <a href="/delete_repair/<%= @repair.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,43 +26,35 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link repair end -->
     </div>
 
     <dl>
       <dt>
         Location
       </dt>
-      <!-- Display location start -->
       <dd>
         <div>
           <%= render partial: "repair_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display location end -->
 
       <dt>
         Repair type
       </dt>
-      <!-- Display repair_type start -->
       <dd>
         <%= @repair.repair_type %>
       </dd>
-      <!-- Display repair_type end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @repair.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Client
       </dt>
-      <!-- Display client_id start -->
       <dd>
         <% if @repair.client.present? %>
           <a href="/clients/<%= @repair.client_id %>">
@@ -73,12 +62,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display client_id end -->
 
       <dt>
         Service provider
       </dt>
-      <!-- Display service_provider_id start -->
       <dd>
         <% if @repair.service_provider.present? %>
           <a href="/service_providers/<%= @repair.service_provider_id %>">
@@ -86,37 +73,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display service_provider_id end -->
 
       <dt>
         Car type
       </dt>
-      <!-- Display car_type start -->
       <dd>
         <%= @repair.car_type %>
       </dd>
-      <!-- Display car_type end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@repair.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@repair.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
