@@ -46,15 +46,9 @@
   <!-- Label and input for price end -->
 
   <!-- Label and input for client_id start -->
-  <div class="form-group">
-    <label for="client_id">
-      Client
-    </label>
-
-    <!-- Input for client_id start -->
-    <%= select_tag(:client_id, options_from_collection_for_select(Client.all, :id, :created_at, @repair.client_id), :class => "form-control") %>
-    <!-- Input for client_id end -->
-  </div>
+  <!-- Input for "client_id" start -->
+  <input type="hidden" name="client_id" value="<%= current_client.id %>">
+  <!-- Input for "client_id" end -->
   <!-- Label and input for client_id end -->
 
   <!-- Label and input for service_provider_id start -->

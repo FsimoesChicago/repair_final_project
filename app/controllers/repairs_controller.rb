@@ -48,7 +48,7 @@ class RepairsController < ApplicationController
     @repair.location = params.fetch("location")
     @repair.repair_type = params.fetch("repair_type")
     @repair.price = params.fetch("price")
-    @repair.client_id = params.fetch("client_id")
+    
     @repair.service_provider_id = params.fetch("service_provider_id")
     @repair.car_type = params.fetch("car_type")
 
