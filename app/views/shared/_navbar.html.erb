@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      RepairFinalProject
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-nav-links" aria-controls="collapsible-nav-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsible-nav-links">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Resources
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="/repairs" class="dropdown-item">
+              Repairs
+            </a>
+            <a href="/service_providers" class="dropdown-item">
+              Service Providers
+            </a>
+            <a href="/clients" class="dropdown-item">
+              Clients
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <% if current_service_provider.blank? %>
+          <li class="nav-item">
+            <a href="/service_providers/sign_in" class="nav-link">
+              ServiceProvider sign in
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/service_providers/sign_up" class="nav-link">
+              ServiceProvider sign up
+            </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="/service_providers/edit" class="nav-link">
+              ServiceProvider edit profile
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/service_providers/sign_out" data-method="delete" class="nav-link">
+              ServiceProvider sign out
+            </a>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav">
+        <% if current_client.blank? %>
+          <li class="nav-item">
+            <a href="/clients/sign_in" class="nav-link">
+              Client sign in
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/clients/sign_up" class="nav-link">
+              Client sign up
+            </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="/clients/edit" class="nav-link">
+              Client edit profile
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/clients/sign_out" data-method="delete" class="nav-link">
+              Client sign out
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div> <!-- .navbar-collapse -->
+  </div> <!-- .container -->
+</nav>
