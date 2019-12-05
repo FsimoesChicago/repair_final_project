@@ -1,6 +1,10 @@
 class ServiceProvider < ApplicationRecord
   # Direct associations
 
+  has_many   :services,
+             :class_name => "Repair",
+             :dependent => :nullify
+
   # Indirect associations
 
   # Validations
