@@ -38,7 +38,9 @@
       </dt>
       <!-- Display location start -->
       <dd>
-        <%= @repair.location %>
+        <div>
+          <%= render partial: "repair_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display location end -->
 

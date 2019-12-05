@@ -11,6 +11,11 @@ class RepairsController < ApplicationController
 
   def index
     @repairs = Repair.all
+    @location_hash = Gmaps4rails.build_markers(@repairs.where.not(:location_latitude => nil)) do |repair, marker|
+      marker.lat repair.location_latitude
+      marker.lng repair.location_longitude
+      marker.infowindow "<h5><a href='/repairs/#{repair.id}'>#{repair.created_at}</a></h5><small>#{repair.location_formatted_address}</small>"
+    end
 
     render("repair_templates/index.html.erb")
   end
